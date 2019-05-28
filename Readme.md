@@ -1,2 +1,2 @@
 Hello world!
-Go Go GO
+Go
