@@ -5,7 +5,7 @@ steps:
   - name: backend
     image: golang
     commands:
-      - go --version
+      - go
     trigger:
       branch:
         - master
