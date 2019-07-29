@@ -10,15 +10,15 @@ steps:
 ---
 kind: pipeline
 name: notify
+clone:
+  disable: true
 depends_on:
   - build
-
 steps:
   - name: notify
-    image: golang
+    image: notify:slack
     commands:
       - echo "hello"
-
 trigger:
   status:
     - success
