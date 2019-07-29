@@ -18,7 +18,7 @@ steps:
   - name: notify
     image: notify:slack
     commands:
-      - echo "hello"
+      - /usr/bin/notify
 trigger:
   status:
     - success
