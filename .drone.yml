@@ -5,10 +5,13 @@ steps:
   - name: backend
     image: golang
     commands:
-      - go --version
+      - echo "OK"
 
 ---
 kind: pipeline
+name: notify
+depends_on:
+  - build
 
 steps:
   - name: notify
@@ -20,7 +23,3 @@ trigger:
   status:
     - success
     - failure
-
-depends_on:
-  - build
-
