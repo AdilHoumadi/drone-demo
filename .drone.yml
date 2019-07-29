@@ -1,13 +1,26 @@
 kind: pipeline
-name: default
+name: build
 
 steps:
   - name: backend
     image: golang
     commands:
       - go --version
+
+---
+kind: pipeline
+
+steps:
   - name: notify
     image: golang
     commands:
       - echo "hello"
+
+trigger:
+  status:
+    - success
+    - failure
+
+depends_on:
+  - build
 
